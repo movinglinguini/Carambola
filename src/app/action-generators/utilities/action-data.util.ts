@@ -25,7 +25,7 @@ export const compressedActionData = [{
   name: 'Maintain an Art Museum',
   oppositeName: 'Repurpose an Art Museum',
   promote: [ VALUE_MAP.stimulation ],
-  description: 'Hold up an institution for the stimulation of the mind.',
+  description: 'Art stimulates the mind.',
   oppositeDescription: 'Art museums give space to rebels and heretics. You cannot have that.',
   harm: [ VALUE_MAP.conformityTradition ],
 }, {
