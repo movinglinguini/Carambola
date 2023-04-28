@@ -1,7 +1,9 @@
 import { IAdvisor } from "../interfaces/advisor.interface";
-import { ExperimentService } from "../services/experiment.service";
+import { selectRandom } from '../shared/utilities/random.utility';
 import { VALUE_LIST } from '../shared/utilities/values.utility';
 import { generateAdvisors as defaultGenerator } from './default-generator.function';
+import { getPlaythroughNo } from './utilities/experiment-playthrough.utils';
+
 
 /**
  * Generated control advisors taken from `../notebooks/Generate NPCS.md`
@@ -23,7 +25,7 @@ export function generateAdvisors(opts: {
   maxAffinity: number,
   minAffinity: number,
 }): IAdvisor[] {
-  const playthroughNo = ExperimentService.playthroughNo;
+  const playthroughNo = getPlaythroughNo();
 
   const newAdvisor = defaultGenerator({...opts, advisorCount: 1})[0];
   newAdvisor.name = 'Your Advisor';

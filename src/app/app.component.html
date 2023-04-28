@@ -1,8 +1,4 @@
 <!-- <app-round-counter></app-round-counter> -->
-<ng-container *ngIf="!isLoggedIn">
-  <app-login-screen (logIn)="onLogin()"></app-login-screen>
-</ng-container>
-
 <ng-container *ngIf="gameInitialized">
   <app-main-screen></app-main-screen>
 </ng-container>

@@ -16,7 +16,7 @@ export class LoginScreenComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      userCode: new FormControl(parseInt(localStorage.getItem('user-code') as string) || null),
+      userCode: new FormControl(null),
     });
   }
 

@@ -8,7 +8,6 @@ import { environment as experimentalEnvironment } from './environment-exp-exp.pr
 const importedEnv = defaultEnvironment;
 
 importedEnv.production = false;
-importedEnv.testMode = false;
 
 export const environment = importedEnv;
 

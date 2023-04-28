@@ -21,8 +21,6 @@ import { ReactionMemoryService } from './components/action-selection/services/re
 import { NgbModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdvisorService } from './services/advisor.service';
 import { ExperimentService } from './services/experiment.service';
-import { LoginScreenComponent } from './components/login-screen/login-screen.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,11 +37,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ChronicleComponent,
     TimelineComponent,
     RoundCounterComponent,
-    LoginScreenComponent,
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
     NgbModule,
     NgbTooltipModule,
   ],

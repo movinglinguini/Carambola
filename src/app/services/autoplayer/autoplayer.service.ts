@@ -19,7 +19,7 @@ export class AutoplayerService {
   async run() {
     for (let i = 0; i < environment.testRunCount; i += 1) {
       console.log('Running playthrough #', i);
-      await this._gameLogic.onStart();
+      this._gameLogic.onStart();
 
       await this._logger.logData({
         playthroughNo: i,
@@ -28,7 +28,7 @@ export class AutoplayerService {
         actions: GameResources.actionList,
       });
 
-      await this._gameLogic.generateDecisionEvent();
+      this._gameLogic.generateDecisionEvent();
 
       while (!this._gameLogic.isGameOver) {
         const roundNo = this._gameLogic.round;
@@ -48,7 +48,7 @@ export class AutoplayerService {
           advisors: GameResources.advisorList,
         });
 
-        const chosenAction = await this.chooseAction();
+        const chosenAction = this.chooseAction();
 
         await this._logger.logData({
           playthroughNo: i,
@@ -67,11 +67,11 @@ export class AutoplayerService {
     }
   }
 
-  async chooseAction() {
+  chooseAction() {
     const decisionEvent = this._gameLogic.currentDecisionEvent;
     const alternatives = decisionEvent?.alternatives as IAction[];
     const chosenAlternative = alternatives[Math.floor(Math.random() * alternatives.length)];
-    await this._gameLogic.onChooseAction(chosenAlternative);
+    this._gameLogic.onChooseAction(chosenAlternative);
 
     return chosenAlternative;
   }
