@@ -28,7 +28,7 @@ export const environment = {
    * The amount of rounds that will transpire
    * before the ending screen appears.
    */
-  countRounds: 7,
+  countRounds: 15,
   /**
    * The max affinity value the NPCs can have
    * toward each other and the player.
